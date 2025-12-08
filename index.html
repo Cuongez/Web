@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopp</title>    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="shop-title">✨ Shop Yen Nhi ✨</h1>
+        
+        <div class="product-grid" id="productList">
+            </div>
+    </div>
+    
+    <footer>
+        Thiết kế bởi bạn | Made with ❤
+    </footer>
+
+    <script>
+        const products = [
+            {
+                name: "Móc khoá bó hoa",
+                price: 40000,
+                image: "image/image copy 2.png" 
+            },
+            {
+                name: "Heo hồng",
+                price: 50000,
+                image: "image/image copy 3.png"
+            },
+            {
+                name: "Heo hồng cute",
+                price: 50000,
+                image: "image/image copy 4.png"
+            },
+             {
+                name: "Bạch tuộc tím",
+                price: 50000,
+                image: "image/image copy 5.png"
+            },
+            {
+                name: "Vịt :<>",
+                price: 50000,
+                image: "image/image copy 6.png"
+            },
+            {
+                name: "Gấu trắng",
+                price: 50000,
+                image: "image/image copy 7.png"
+            },
+            {
+                name: "Thỏ Judy Hopps",
+                price: 50000,
+                image: "image/image copy 8.png"
+            },
+            {
+                name: "Cáo Nick Wilde",
+                price: 50000,
+                image: "image/image copy 9.png"
+            },
+            {
+                name: "Chim cánh cụt",
+                price: 50000,
+                image: "image/image copy.png"
+            },
+            {
+                name: "Bắp ngô",
+                price: 50000,
+                image: "image/image.png"
+            }
+            
+        ];
+
+        //print
+        function renderProducts() {
+            const container = document.getElementById('productList');
+            let html = '';
+
+            products.forEach(p => {
+                let priceVND = p.price.toLocaleString('vi-VN', {style : 'currency', currency : 'VND'});
+
+                html += `
+                <div class="product-card">
+                    <img src="${p.image}" class="product-img" alt="${p.name}">
+                    <h3 class="product-name">${p.name}</h3>
+                    <div class="product-price">${priceVND}</div>
+                    <button class="btn-cute" onclick="buyNow('${p.name}')">Thêm vào giỏ ✨</button>
+                </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        //nút mua
+        function buyNow(productName) {
+            const soDienThoai = "0964590536"; 
+            const dongY = confirm(`Bạn muốn mua "${productName}" đúng không?\nBấm OK để qua Zalo chat với mình nhé!`);
+            
+            if (dongY == true) {
+                window.open(`https://zalo.me/${soDienThoai}`, '_blank');
+            }
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>

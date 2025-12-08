@@ -1,0 +1,158 @@
+:root {
+    --main-pink: #ffadd2;     
+    --light-pink: #ffe4ef; 
+    --accent-blue: #a0e7e5;
+    --accent-yellow: #fff4bd; 
+    --text-color: #6b5b65;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--light-pink);
+    background-image: radial-gradient(var(--main-pink) 10%, transparent 10%);
+    background-size: 20px 20px;
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+
+h1.shop-title {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    color: var(--main-pink);
+    font-size: 3rem;
+    text-shadow: 3px 3px 0px #fff, 5px 5px 0px var(--accent-blue);
+    margin-bottom: 40px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(255, 173, 210, 0.3);
+    border: 3px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 173, 210, 0.5);
+    border-color: var(--accent-yellow);
+}
+
+.product-card::before {
+    content: '❤';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--main-pink);
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+.product-img {
+    width: 100%;  
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--light-pink);
+    display: block;
+}
+
+.product-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 15px 0 10px;
+}
+
+.product-price {
+    color: var(--main-pink);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.btn-cute {
+    background-color: var(--main-pink);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 0px #e08fad;
+    transition: all 0.1s;
+}
+
+.btn-cute:hover {
+    background-color: var(--accent-blue);
+    box-shadow: 0 4px 0px #7dc1c0;
+}
+
+.btn-cute:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+   @media (max-width: 768px) {
+    
+ 
+    h1.shop-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        padding: 10px; 
+    }
+    .product-card {
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .product-img {
+        height: 150px; 
+    }
+    .product-name {
+        font-size: 1rem;
+        margin: 10px 0 5px;
+    }
+    .product-price {
+        font-size: 1.1rem;
+    }
+
+    .btn-cute {
+        width: 100%;   
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+    
+    .product-card:hover {
+        transform: none; 
+    }
+}
